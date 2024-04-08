@@ -1,11 +1,10 @@
 'use client'
+import {FC} from 'react'
 import {useQuery} from "@tanstack/react-query";
-import axios from "axios";
-import {NextPage} from "next";
-import {FC} from "react";
+import {axios} from "@/utils/axios-config";
 
 const fetchPosts = async () => {
-    return axios.get('https://jsonplaceholder.typicode.com/posts').then(res => res.data);
+    return axios.get('posts').then(res => res.data);
 }
 
 interface IPost {
@@ -16,7 +15,7 @@ interface IPost {
 }
 
 
-const Home:FC<NextPage> = (props) => {
+const Home:FC<any> = (props) => {
     const {} = props
     const {data, isLoading, isError, error} = useQuery<IPost[]>({
         queryKey: ['posts'],
