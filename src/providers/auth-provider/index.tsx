@@ -16,7 +16,7 @@ const AuthProvider: FC<AuthProviderProps> = (props) => {
                 if (error.response && error.response.status === 401) {
                     try {
                         // Perform token refresh or re-authentication
-                        // Example:
+
                         // const refreshedToken = await refreshToken();
                         // Save refreshed token to localStorage or cookies
                         // axios.defaults.headers.common['Authorization'] = `Bearer ${refreshedToken}`;
