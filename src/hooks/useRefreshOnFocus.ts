@@ -1,4 +1,4 @@
-import {useEffect, useCallback, useRef} from 'react'
+import { useCallback, useRef} from 'react'
 
 
 type RefreshFocusProps = {
@@ -8,16 +8,13 @@ type RefreshFocusProps = {
 
 const useRefreshOnFocus = ({refetch}: RefreshFocusProps) => {
     const enabledRef = useRef(false)
-    useEffect(
         useCallback(() => {
             if (enabledRef.current) {
                 refetch()
             } else {
                 enabledRef.current = true
             }
-        }, [refetch]),
-    )
-
+        }, [refetch])
 }
 
 export {useRefreshOnFocus}
