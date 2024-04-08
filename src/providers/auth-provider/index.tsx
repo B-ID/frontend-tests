@@ -1,3 +1,5 @@
+'use client'
+
 import React, {FC, ReactNode, useEffect} from 'react';
 import {axios} from '@/utils/axios-config'
 
