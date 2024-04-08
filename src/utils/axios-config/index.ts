@@ -9,7 +9,7 @@ const baseURL = 'https://jsonplaceholder.typicode.com';
 const axiosInstance = Axios.create({
     baseURL,
     headers: {
-        Authorization: ''
+        Authorization: `Bearer ${baseURL}`
     }
 })
 

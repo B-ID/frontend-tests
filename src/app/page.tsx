@@ -24,7 +24,7 @@ const Home:FC<any> = (props) => {
 
 
   return (
-    <main className="">
+    <main className="py-8">
         {isLoading && 'Loading ....'}
         {!isLoading && (
       <div className={'space-y-4'}>

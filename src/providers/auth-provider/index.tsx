@@ -11,14 +11,14 @@ type AuthProviderProps = {
 const AuthProvider: FC<AuthProviderProps> = (props) => {
     const {children} = props
 
-    useEffect(() => {
+
         const interceptor = axios.interceptors.response.use(
             response => response,
             async error => {
                 if (error.response && error.response.status === 401) {
                     try {
                         // Perform token refresh or re-authentication
-
+                        // Example:
                         // const refreshedToken = await refreshToken();
                         // Save refreshed token to localStorage or cookies
                         // axios.defaults.headers.common['Authorization'] = `Bearer ${refreshedToken}`;
@@ -35,11 +35,6 @@ const AuthProvider: FC<AuthProviderProps> = (props) => {
             }
         );
 
-        return () => {
-            // Cleanup the interceptor when component unmounts
-            axios.interceptors.response.eject(interceptor);
-        };
-    }, []);
 
 
 
